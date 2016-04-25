@@ -88,6 +88,9 @@ body {
 	/* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#017991', endColorstr='#8e8e8e',GradientType=0 );
 	/* IE6-9 */
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	margin: 0;
 }
 
 ::selection {
