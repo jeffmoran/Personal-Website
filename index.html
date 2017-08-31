@@ -6,7 +6,7 @@
 -->
 <html>
 <head>
-    <title>Jeff Moran | NYC</title>
+    <title>Jeff Moran | iOS Developer</title>
     <meta charset="utf-8">
     <meta content=
     "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"
@@ -22,6 +22,22 @@
           ga('create', 'UA-76778585-1', 'auto');
           ga('send', 'pageview');       
     </script>
+    
+    <script>
+/**
+* Function that tracks a click on an outbound link in Analytics.
+* This function takes a valid URL string as an argument, and uses that URL string
+* as the event label. Setting the transport method to 'beacon' lets the hit be sent
+* using 'navigator.sendBeacon' in browser that support it.
+*/
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'outbound', 'click', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}
+</script>
+
 </head>
 <body class="is-loading">
     <div id="wrapper">
@@ -29,7 +45,7 @@
             <header>
                 <span class="avatar"><img alt="" src="images/self.jpg"></span>
                 <h1>Hi, I'm Jeff.</h1>
-                <p>NYC native — currently a student in Brooklyn.</p>
+                <p>NYC native.</p>
                 <p>I enjoy developing for iOS, tinkering with electronics, practicing the piano, and playing fantasy basketball.</p>
                 <br>
             </header>
@@ -37,19 +53,19 @@
                 <p>Connect with me below <i aria-hidden="true" class= "fa fa-hand-o-down"></i></p>
                 <ul class="icons">
                     <li>
-                        <a class="fa-github" href="http://github.com/jeffmoran" target="_blank">Github</a>
+                        <a class="fa-github" href="http://github.com/jeffmoran" onclick="trackOutboundLink('http://github.com/jeffmoran');" target="_blank">Github</a>
                     </li>
                     <li>
-                        <a class="fa-apple" href= "https://itunes.apple.com/us/developer/jeffrey-moran/id533533066" target="_blank">App Store</a>
+                        <a class="fa-apple" href= "https://itunes.apple.com/us/developer/jeffrey-moran/id533533066" onclick="trackOutboundLink('https://itunes.apple.com/us/developer/jeffrey-moran/id533533066');" target="_blank">App Store</a>
                     </li>
                     <li>
-                        <a class="fa-linkedin" href= "http://linkedin.com/in/jeffreymoran" target= "_blank">LinkedIn</a>
+                        <a class="fa-linkedin" href= "http://linkedin.com/in/jeffreymoran" onclick="trackOutboundLink('http://linkedin.com/in/jeffreymoran');" target= "_blank">LinkedIn</a>
                     </li>
                     <li>
-                        <a class="fa-envelope" href= "mailto:jeff@jeffreymoran.com?Subject=Let's%20talk!">Email</a>
+                        <a class="fa-envelope" href= "mailto:Jmc113093@gmail.com?Subject=Let's%20talk!">Email</a>
                     </li>
                     <li>
-                        <a class="fa-file-pdf-o" href="/Resume.pdf" target= "_blank">Resume</a>
+                        <a class="fa-file-pdf-o" href="/Resume.pdf" onclick="trackOutboundLink('/Resume.pdf');" target= "_blank">Resume</a>
                     </li>
                 </ul>
             </footer>
